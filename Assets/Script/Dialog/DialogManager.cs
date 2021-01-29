@@ -3,14 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+public enum Character
+{
+    sam,
+    ema,
+    mom,
+    dad
+}
 public class DialogManager : MonoBehaviour
 {
+
     public static DialogManager instance;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogText;
     public Image dialogImage;
     public Queue<string> sentences = new Queue<string>();
+
+    public Character talkingCharacter;
+    private int samHash;
+    private int emmaHash;
+    private int momHash;
+    private int dadHash;
+    private int talkHash;
 
     private void Awake()
     {
@@ -19,12 +33,18 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        samHash = Animator.StringToHash("Sam");
+        emmaHash = Animator.StringToHash("Emma");
+        momHash = Animator.StringToHash("Mom");
+        dadHash = Animator.StringToHash("Dad");
+        talkHash = Animator.StringToHash("Talk");
     }
 
     public void StartSingleDialogueByTime(Dialogue dialogue, float sec)
     {
         nameText.text = dialogue.name;
         dialogImage.sprite = dialogue.image;
+        talkingCharacter = dialogue.character;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -32,8 +52,34 @@ public class DialogManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        checkCharacter();
         StartCoroutine(DisplayNext(sec));
 
+    }
+
+    void checkCharacter()
+    {
+        Animator animator = dialogImage.gameObject.GetComponent<Animator>();
+        animator.SetBool(samHash, false);
+        animator.SetBool(emmaHash, false);
+        animator.SetBool(momHash, false);
+        animator.SetBool(dadHash, false);
+
+        switch (talkingCharacter)
+        {
+            case Character.sam:
+                animator.SetBool(samHash, true);
+                break;
+            case Character.ema:
+                animator.SetBool(emmaHash, true);
+                break;
+            case Character.mom:
+                animator.SetBool(momHash, true);
+                break;
+            case Character.dad:
+                animator.SetBool(dadHash, true);
+                break;
+        }
     }
 
     IEnumerator DisplayNext(float sec)
