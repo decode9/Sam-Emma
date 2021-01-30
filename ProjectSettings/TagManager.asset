@@ -6,6 +6,7 @@ TagManager:
   tags:
   - chock
   - end
+  - VCam
   layers:
   - Default
   - TransparentFX
@@ -16,11 +17,11 @@ TagManager:
   - 
   - 
   - Animator
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Interactive
+  - Object
+  - Player
+  - Enemy
+  - Dead
   - 
   - 
   - 
@@ -49,9 +50,9 @@ TagManager:
   - name: walls
     uniqueID: 1348049609
     locked: 0
-  - name: player
-    uniqueID: 2940175055
-    locked: 0
   - name: decoration
     uniqueID: 1802560221
+    locked: 0
+  - name: player
+    uniqueID: 2940175055
     locked: 0

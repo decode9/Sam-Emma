@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class Portal : MonoBehaviour
+public class Portal : Interactive
 {
     public string portal;
     public string target;
-    private BoxCollider2D boxCollider2D;
+    public PolygonCollider2D confiner;
 
-    private void Start()
+    public override void Interact()
     {
-        boxCollider2D = GetComponent<BoxCollider2D>();
-        boxCollider2D.isTrigger = true;
-        boxCollider2D.size = new Vector2(1, 1);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("trigger");
-        if (other.CompareTag("Player")) PortalManager.instance.Teleport(target);
+        PortalManager.instance.Teleport(target);
     }
 
 }
