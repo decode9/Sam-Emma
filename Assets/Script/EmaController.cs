@@ -14,6 +14,7 @@ public class EmaController : MonoBehaviour
     private CapsuleCollider2D myCollider;
     public LayerMask layerInteraction;
 
+    public float speedRate = 2f;
 
     void Start()
     {
@@ -35,12 +36,11 @@ public class EmaController : MonoBehaviour
 
         Animation(movimiento);
         // ---- Movimiento de Cuerpo Rigido ---- //
-        Vector2 velocityVector = new Vector2(movimiento[0], movimiento[1]) * 2;
+        Vector2 velocityVector = new Vector2(movimiento[0], movimiento[1]) * speedRate;
         // if (animator.GetBool(attackHash)) velocityVector = Vector2.zero;
 
         //myRigid.AddForce(velocityVector);Debug
         myRigid.velocity = velocityVector;
-
     }
 
     void Animation(float[] movimiento)

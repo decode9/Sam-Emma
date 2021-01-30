@@ -7,6 +7,9 @@ TagManager:
   - chock
   - end
   - VCam
+  - carItem
+  - player
+  - gameOverPanel
   layers:
   - Default
   - TransparentFX
@@ -22,7 +25,7 @@ TagManager:
   - Player
   - Enemy
   - Dead
-  - 
+  - Text
   - 
   - 
   - 
@@ -55,4 +58,6 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 2940175055
+  - name: Text
+    uniqueID: 969148111
     locked: 0
