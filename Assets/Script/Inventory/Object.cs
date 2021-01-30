@@ -28,6 +28,7 @@ public class Object : Interactive
     }
 
     public override void Interact(){
+        
         if(Inventory.instance.AddObject(item,amount)) Destroy(gameObject);
     }
 }
