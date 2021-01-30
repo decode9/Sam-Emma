@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ShadowEnemyController : MonoBehaviour
 {
+    public GameObject target;
+    public float subtractSpeed = .001f;
     public float speed;
-    public float waitTime;
-    public float startWaitTime;
 
-    public Transform moveSpot;
+    private EmaController emaController;
+    private Transform moveSpot;
 
     void Start()
     {
-        waitTime = startWaitTime;
+        emaController = target.GetComponent<EmaController>();
+        moveSpot = target.transform;
     }
 
     void Update()
@@ -21,13 +23,9 @@ public class ShadowEnemyController : MonoBehaviour
 
         if(Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
         {
-            if(waitTime <= 0)
+            if(emaController.speedRate > 0)
             {
-                waitTime = startWaitTime;
-            } 
-            else 
-            {
-                waitTime -= Time.deltaTime;
+                emaController.speedRate -= subtractSpeed;
             }
         }
     }

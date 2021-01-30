@@ -11,6 +11,7 @@ public class RandomSpawner : MonoBehaviour
     public float sequenceTime = 3f;
 
     private List<Vector3> enemyPositions = new List<Vector3>();
+    private int numberPositions = 1;
 
     void Start() {
         StartCoroutine(WaitBeforeBegin());
@@ -22,7 +23,12 @@ public class RandomSpawner : MonoBehaviour
         Vector3 pointCoordinates = spawnPoints[randSpawnPoint].position;
 
         if (!VerifyEnemyPosition(pointCoordinates))
+        {
             Instantiate(enemyPrefab, pointCoordinates, transform.rotation);
+            numberPositions++;
+
+            StopSpawn();
+        }
 
         enemyPositions.Add(pointCoordinates);
     }
@@ -36,6 +42,12 @@ public class RandomSpawner : MonoBehaviour
     {
         if(!enemyPrefab.activeInHierarchy)
             enemyPrefab.SetActive(true);
+    }
+
+    private void StopSpawn()
+    {
+        int enemies = spawnPoints.Length + 1;
+        if(enemies == numberPositions) CancelInvoke();
     }
 
     IEnumerator WaitBeforeBegin()
