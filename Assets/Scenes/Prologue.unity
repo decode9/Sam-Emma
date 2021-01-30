@@ -614,12 +614,12 @@ PrefabInstance:
     - target: {fileID: 2102472239672150762, guid: 9468a3f6ce9c8a548b41a4394b2e04c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.48
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2102472239672150762, guid: 9468a3f6ce9c8a548b41a4394b2e04c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.11
+      value: 78.07
       objectReference: {fileID: 0}
     - target: {fileID: 2102472239672150762, guid: 9468a3f6ce9c8a548b41a4394b2e04c6,
         type: 3}
@@ -740,6 +740,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.17368424
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402864204967933425, guid: 649948cd64ea4ca4998c9f18924ec5cd,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4402864204967933431, guid: 649948cd64ea4ca4998c9f18924ec5cd,
         type: 3}
       propertyPath: m_Name
@@ -20041,15 +20071,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChockPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6232096202254126032, guid: 98f63cbee73c20d47905aa1073c19f05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6232096202254126034, guid: 98f63cbee73c20d47905aa1073c19f05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 6232096202254126034, guid: 98f63cbee73c20d47905aa1073c19f05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.73
+      value: 76.94
       objectReference: {fileID: 0}
     - target: {fileID: 6232096202254126034, guid: 98f63cbee73c20d47905aa1073c19f05,
         type: 3}
