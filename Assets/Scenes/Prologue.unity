@@ -20417,6 +20417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 8792527296338953114, guid: c8c5392deaa19454d87064a31e272ade,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8792527296338953115, guid: c8c5392deaa19454d87064a31e272ade,
         type: 3}
       propertyPath: m_RootOrder
