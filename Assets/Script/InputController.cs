@@ -21,14 +21,10 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimatorManager animatorManager = AnimatorManager.instance;
-
-        if (!animatorManager.start)
-        {
 
             Actions();
             Movements();
-        }
+        
 
     }
 
