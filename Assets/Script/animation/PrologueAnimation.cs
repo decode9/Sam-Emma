@@ -10,17 +10,14 @@ public class PrologueAnimation : Animation
     public GameObject smoke;
     private int dialogCount = 0;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         animatorManager = GetComponent<AnimatorManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CheckDialog();
+        StartCoroutine(WaitBeforeBegin());
     }
 
     private void CheckDialog()
@@ -79,4 +76,10 @@ public class PrologueAnimation : Animation
         GameObject smokeObject = Instantiate(smoke, player.transform.position, Quaternion.identity);
     }
 
+    IEnumerator WaitBeforeBegin()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        CheckDialog();
+    }
 }
