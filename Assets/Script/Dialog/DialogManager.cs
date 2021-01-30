@@ -20,11 +20,8 @@ public class DialogManager : MonoBehaviour
     public Queue<string> sentences = new Queue<string>();
 
     public Character talkingCharacter;
-    private int samHash;
-    private int emmaHash;
-    private int momHash;
-    private int dadHash;
-    private int talkHash;
+
+    public bool dialogRun;
 
     private void Awake()
     {
@@ -33,11 +30,6 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        samHash = Animator.StringToHash("Sam");
-        emmaHash = Animator.StringToHash("Emma");
-        momHash = Animator.StringToHash("Mom");
-        dadHash = Animator.StringToHash("Dad");
-        talkHash = Animator.StringToHash("Talk");
     }
 
     public void StartSingleDialogueByTime(Dialogue dialogue, float sec)
@@ -46,13 +38,12 @@ public class DialogManager : MonoBehaviour
         dialogImage.sprite = dialogue.image;
         talkingCharacter = dialogue.character;
         sentences.Clear();
-
+        checkCharacter();
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-
-        checkCharacter();
+        dialogRun = true;
         StartCoroutine(DisplayNext(sec));
 
     }
@@ -60,24 +51,24 @@ public class DialogManager : MonoBehaviour
     void checkCharacter()
     {
         Animator animator = dialogImage.gameObject.GetComponent<Animator>();
-        animator.SetBool(samHash, false);
-        animator.SetBool(emmaHash, false);
-        animator.SetBool(momHash, false);
-        animator.SetBool(dadHash, false);
+        animator.SetBool("Sam", false);
+        animator.SetBool("Emma", false);
+        animator.SetBool("Mom", false);
+        animator.SetBool("Dad", false);
 
         switch (talkingCharacter)
         {
             case Character.sam:
-                animator.SetBool(samHash, true);
+                animator.SetBool("Sam", true);
                 break;
             case Character.ema:
-                animator.SetBool(emmaHash, true);
+                animator.SetBool("Emma", true);
                 break;
             case Character.mom:
-                animator.SetBool(momHash, true);
+                animator.SetBool("Mom", true);
                 break;
             case Character.dad:
-                animator.SetBool(dadHash, true);
+                animator.SetBool("Dad", true);
                 break;
         }
     }
@@ -90,6 +81,9 @@ public class DialogManager : MonoBehaviour
             yield return StartCoroutine(TypeSentence(sentence));
             yield return new WaitForSeconds(sec);
         } while (sentences.Count > 0);
+
+        dialogRun = false;
+
     }
 
     void DisplayNextSentence()
@@ -106,12 +100,15 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        Animator animator = dialogImage.gameObject.GetComponent<Animator>();
+        animator.SetBool("Talk", true);
         dialogText.text = "";
         foreach (char c in sentence.ToCharArray())
         {
             dialogText.text += c;
             yield return new WaitForSeconds(0.05f);
         }
+        animator.SetBool("Talk", false);
     }
 
     void EndDialogue()

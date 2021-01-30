@@ -8,19 +8,27 @@ public class PrologueAnimation : Animation
     public bool run = true;
     public Dialogue[] dialogues;
     public GameObject smoke;
+    private int dialogCount = 0;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         animatorManager = GetComponent<AnimatorManager>();
-        DialogManager.instance.StartSingleDialogueByTime(dialogues[0], 3f);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        StartCoroutine(WaitBeforeBegin());
+    }
 
+    private void CheckDialog()
+    {
+
+        DialogManager dialogManager = DialogManager.instance;
+        if (!dialogManager.dialogRun && dialogues.Length > dialogCount)
+        {
+            dialogManager.StartSingleDialogueByTime(dialogues[dialogCount], 3f);
+            dialogCount += 1;
+        }
     }
 
     private void FixedUpdate()
@@ -49,7 +57,7 @@ public class PrologueAnimation : Animation
             player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             // ---- Movimiento de Cuerpo Rigido ---- //
-            Vector2 velocityVector = new Vector2(x, y) * 5;
+            Vector2 velocityVector = new Vector2(x, y) * 2.05f;
             player.GetComponent<Rigidbody2D>().velocity = velocityVector;
             return;
         }
@@ -68,4 +76,10 @@ public class PrologueAnimation : Animation
         GameObject smokeObject = Instantiate(smoke, player.transform.position, Quaternion.identity);
     }
 
+    IEnumerator WaitBeforeBegin()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        CheckDialog();
+    }
 }

@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7963235370664498389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3341745, y: -0.18183818, z: -12.90625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -60,18 +60,56 @@ MonoBehaviour:
   player: {fileID: 0}
   run: 1
   dialogues:
-  - name: Jorge Bastidas
+  - name: Mom
     sentences:
-    - Hola! Soy Jorge!
-    - Probare mi dialogo!
-    image: {fileID: 21300000, guid: 300649c45606ee8468a521268c4324e1, type: 3}
-  - name: 
-    sentences: []
+    - Que buen viaje tuvimos en el roraima!
+    - Verdad querido? Que te ha parecido?
+    character: 2
+    image: {fileID: -7920492065007091421, guid: 731a7301665f92f47b7b86408323b368,
+      type: 3}
+  - name: Dad
+    sentences:
+    - Si, Mi amor ha sido excelente! deberiamos ir en otra oportunidad de nuevo!
+    - Aunque me siento un poco cansado, quiero llegar a casa pronto.
+    character: 3
     image: {fileID: 0}
-  - name: 
-    sentences: []
-    image: {fileID: 0}
-  - name: 
-    sentences: []
-    image: {fileID: 0}
+  - name: Mom
+    sentences:
+    - Estas bien Querido?
+    - Te veo un poco palido...
+    character: 2
+    image: {fileID: -7920492065007091421, guid: 731a7301665f92f47b7b86408323b368,
+      type: 3}
+  - name: Sam
+    sentences:
+    - "Ema, devuelveme mi mu\xF1eco! "
+    - Papa me lo regalo a mi!, es mio!
+    character: 0
+    image: {fileID: 2059925473569221776, guid: ff2ddfae26dbee94c8ad970d34a22bcf, type: 3}
+  - name: Ema
+    sentences:
+    - 'Pues ahora es mio! '
+    - Tu lo tuviste durante mucho tiempo en todo el viaje!
+    character: 1
+    image: {fileID: 9205794687103857937, guid: e78f9e668e2e5624689e957dd957d4dc, type: 3}
+  - name: Sam
+    sentences:
+    - "Papa! dile Algo! quiero mi mu\xF1eco!"
+    - Es mio!
+    character: 0
+    image: {fileID: -317974254487895082, guid: 6fd8da7a54ddc9c4f8fd47113cb8651d, type: 3}
+  - name: Mom
+    sentences:
+    - "Ni\xF1as! dejen de pelear! compartan sus juguetes"
+    - Ademas su padre se siente mal y aun falta para llegar a casa
+    character: 2
+    image: {fileID: -7920492065007091421, guid: 731a7301665f92f47b7b86408323b368,
+      type: 3}
+  - name: Ema
+    sentences:
+    - Papa! estas bien!?
+    - Cuidado!!
+    character: 1
+    image: {fileID: -5369366932838910030, guid: acebb20e0b3354d4bb390ae5fb93a849,
+      type: 3}
   smoke: {fileID: 2853916391975067504, guid: 28281a7fe10bf284cada3cbaaed119cc, type: 3}
