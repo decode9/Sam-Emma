@@ -27,7 +27,7 @@ public class EmaController : MonoBehaviour
         movePlayer();
     }
 
-     void movePlayer()
+    void movePlayer()
     {
         movimiento = InputPlayer.vector;
 
@@ -40,7 +40,7 @@ public class EmaController : MonoBehaviour
         myRigid.velocity = velocityVector;
     }
 
-      void Animation(float[] movimiento)
+    void Animation(float[] movimiento)
     {
         bool run = (movimiento[1] != 0 || movimiento[0] != 0);
         animator.SetBool("run", run);
