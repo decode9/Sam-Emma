@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(BoxCollider2D))]
-public class Object : Interactive
+public class Object : Quest
 {
     public Item item;
     private SpriteRenderer spriteRenderer;
@@ -34,10 +34,15 @@ public class Object : Interactive
 
     public override void Interact()
     {
-        spriteRenderer.sortingLayerName = "decoration";
-        spriteRenderer.sortingOrder = 2;
-        if (animator) animator.SetBool("taked", true);
-        if (source) source.Play();
-        if (Inventory.instance.AddObject(item, amount)) Destroy(gameObject);
+        bool validation = (items.Length > 0) ? ValidateItems() : true;
+        if (validation)
+        {
+            spriteRenderer.sortingLayerName = "decoration";
+            spriteRenderer.sortingOrder = 2;
+            if (animator) animator.SetBool("taked", true);
+            if (source) source.Play();
+            if (Inventory.instance.AddObject(item, amount)) Destroy(gameObject);
+        }
+
     }
 }
