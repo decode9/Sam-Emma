@@ -42,8 +42,12 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: e88354091e3289245a1d65c3f9b65520, type: 3}
+  - logo: {fileID: 21300000, guid: 7642fbae98e3198498796ec4e5af450a, type: 3}
     duration: 3
+  - logo: {fileID: 21300000, guid: 86be2597c28df51418849fb2443970f7, type: 3}
+    duration: 3
+  - logo: {fileID: 21300000, guid: e88354091e3289245a1d65c3f9b65520, type: 3}
+    duration: 4
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1366
@@ -263,7 +267,14 @@ PlayerSettings:
   androidGamepadSupportLevel: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: fe8d9546fb312cd4bb80c83b327daad5, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsJobs:
