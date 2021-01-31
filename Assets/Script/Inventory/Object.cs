@@ -8,6 +8,8 @@ public class Object : Interactive
     public Item item;
     private SpriteRenderer spriteRenderer;
     public int amount = 1;
+    Animator animator;
+    AudioSource audio; 
 
     private void OnValidate() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,7 +19,6 @@ public class Object : Interactive
         myCollider.size = new Vector2(1,1);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
@@ -25,10 +26,13 @@ public class Object : Interactive
         myCollider.isTrigger = true;
         myCollider.size = new Vector2(1,1);
         gameObject.layer = 10;
+        animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     public override void Interact(){
-        
+        animator.SetBool("taked", true);
+        audio.Play();
         if(Inventory.instance.AddObject(item,amount)) Destroy(gameObject);
     }
 }
