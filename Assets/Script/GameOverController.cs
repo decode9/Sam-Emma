@@ -19,9 +19,26 @@ public class GameOverController : MonoBehaviour
         StartCoroutine(WaitForAnimation());
     }
 
+    public void RestartScene()
+    {
+        FreezeScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitScene()
+    {
+        FreezeScene(1);
+        SceneManager.LoadScene("SecondScreen");
+    }
+
+    private void FreezeScene(int playOrStop)
+    {
+        Time.timeScale = playOrStop;
+    }
+
     private IEnumerator WaitForAnimation()
     {
         yield return new WaitForSeconds(2);
-        Time.timeScale = 0;
+        FreezeScene(0);
     }
 }
