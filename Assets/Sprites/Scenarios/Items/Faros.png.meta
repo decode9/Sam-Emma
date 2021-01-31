@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c6646eecc3ffbba4b81f531850473e6e
+guid: c54eba16e71092a4d9824b37c7aee2b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 497144033895180616
-    second: Arbusto Grande Oscuro Azul_0
+      213: -4051015788085346679
+    second: Faros_0
   - first:
-      213: -4029155753023177154
-    second: Arbusto Grande Oscuro Azul_1
+      213: -4402197204114922865
+    second: Faros_1
   - first:
-      213: -4739521634265892369
-    second: Arbusto Grande Oscuro Azul_2
+      213: -6422383055747479846
+    second: Faros_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,18 +93,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -132,13 +120,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arbusto Grande Oscuro Azul_0
+      name: Faros_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 0
-        width: 32
-        height: 32
+        width: 12
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 849e6866dd536e600800000000000000
-      internalID: 497144033895180616
+      spriteID: 98e7cab9a96e7c7c0800000000000000
+      internalID: -4051015788085346679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arbusto Grande Oscuro Azul_1
+      name: Faros_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 42
         y: 0
-        width: 32
-        height: 32
+        width: 12
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ef454a0309518c0800000000000000
-      internalID: -4029155753023177154
+      spriteID: f82238977f048e2c0800000000000000
+      internalID: -4402197204114922865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arbusto Grande Oscuro Azul_2
+      name: Faros_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 73
         y: 0
-        width: 32
-        height: 32
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe97d484f26d93eb0800000000000000
-      internalID: -4739521634265892369
+      spriteID: ad60fa653ac1fd6a0800000000000000
+      internalID: -6422383055747479846
       vertices: []
       indices: 
       edges: []
