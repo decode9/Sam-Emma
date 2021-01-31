@@ -7,7 +7,8 @@ public class Inventory : MonoBehaviour
     public bool inventoryFull;
     public static Inventory instance;
     private Space[] spaces;
-    private List<Item> objects = new List<Item>();
+    [HideInInspector]
+    public List<Item> objects = new List<Item>();
     private int emptySpace = 0;
 
     private void Awake()

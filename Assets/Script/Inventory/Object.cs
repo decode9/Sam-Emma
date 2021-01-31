@@ -9,30 +9,35 @@ public class Object : Interactive
     private SpriteRenderer spriteRenderer;
     public int amount = 1;
     Animator animator;
-    AudioSource audio; 
-
-    private void OnValidate() {
+    AudioSource source;
+    private void OnValidate()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
         gameObject.name = item.itemName;
         spriteRenderer.sprite = item.artwork;
-        myCollider.size = new Vector2(1,1);
+        myCollider.size = new Vector2(1, 1);
+        source = GetComponent<AudioSource>();
     }
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<BoxCollider2D>();
         player = GameManager.instance.player.GetComponent<EmaController>();
         myCollider.isTrigger = true;
-        myCollider.size = new Vector2(1,1);
+        myCollider.size = new Vector2(1, 1);
         gameObject.layer = 10;
         animator = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
-    public override void Interact(){
-        animator.SetBool("taked", true);
-        audio.Play();
-        if(Inventory.instance.AddObject(item,amount)) Destroy(gameObject);
+    public override void Interact()
+    {
+        spriteRenderer.sortingLayerName = "decoration";
+        spriteRenderer.sortingOrder = 2;
+        if (animator) animator.SetBool("taked", true);
+        if (source) source.Play();
+        if (Inventory.instance.AddObject(item, amount)) Destroy(gameObject);
     }
 }

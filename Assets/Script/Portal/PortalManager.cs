@@ -24,10 +24,13 @@ public class PortalManager : MonoBehaviour
             active = true;
             GameManager gameManager = GameManager.instance;
             Portal portal = Array.Find(portals, ele => ele.portal == target);
-            gameManager.player.GetComponent<Transform>().position = portal.transform.position;
-            CinemachineConfiner camConfiner = GameManager.instance.vCam.GetComponent<CinemachineConfiner>();
-            camConfiner.m_BoundingShape2D = portal.confiner;
-            StartCoroutine(ColdDown());
+            if (portal)
+            {
+                gameManager.player.GetComponent<Transform>().position = portal.transform.position;
+                CinemachineConfiner camConfiner = GameManager.instance.vCam.GetComponent<CinemachineConfiner>();
+                camConfiner.m_BoundingShape2D = portal.confiner;
+                StartCoroutine(ColdDown());
+            }
         }
 
     }
