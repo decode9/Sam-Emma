@@ -14,7 +14,6 @@ public class itemTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-
         if(collision.CompareTag("player")) {
             animator.SetBool("taked", true);
             audio.Play();

@@ -10,7 +10,9 @@ public class EmaController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D myRigid;
     private float[] movimiento = new float[2];
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
+    private CapsuleCollider2D myCollider;
+    public LayerMask layerInteraction;
 
     public float speedRate = 2f;
 
@@ -20,10 +22,11 @@ public class EmaController : MonoBehaviour
         myRigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        myCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void FixedUpdate()
-    {   
+    {
         movePlayer();
     }
 
@@ -50,7 +53,7 @@ public class EmaController : MonoBehaviour
             animator.SetFloat("x", movimiento[0]);
             animator.SetFloat("y", movimiento[1]);
 
-            if(movimiento[0] < 0 && Mathf.Abs(movimiento[1]) < Mathf.Abs(movimiento[0])) spriteRenderer.flipX = true;
+            if (movimiento[0] < 0 && Mathf.Abs(movimiento[1]) < Mathf.Abs(movimiento[0])) spriteRenderer.flipX = true;
             else spriteRenderer.flipX = false;
         }
 
@@ -58,5 +61,11 @@ public class EmaController : MonoBehaviour
         {
             animator.SetBool("run", false);
         }
+    }
+    public RaycastHit2D[] Interaction()
+    {
+        RaycastHit2D[] circleCast = Physics2D.CircleCastAll(transform.position, myCollider.shapeCount, InputPlayer.lookDirection.normalized, 0f, layerInteraction);
+        if (circleCast != null) return circleCast;
+        return null;
     }
 }
