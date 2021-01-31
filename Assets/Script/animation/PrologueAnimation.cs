@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PrologueAnimation : Animation
 {
     [HideInInspector]
     public bool run = true;
+
+    public UnityEvent onInteraction;
     public Dialogue[] dialogues;
     public GameObject smoke;
     private int dialogCount = 0;
+
+    public Transform scene;
 
     void Start()
     {
@@ -26,9 +31,10 @@ public class PrologueAnimation : Animation
         DialogManager dialogManager = DialogManager.instance;
         if (!dialogManager.dialogRun && dialogues.Length > dialogCount)
         {
-            dialogManager.StartSingleDialogueByTime(dialogues[dialogCount], 3f);
+            dialogManager.StartSingleDialogueByTime(dialogues[dialogCount], 2.985f);
             dialogCount += 1;
         }
+        if (dialogues.Length <= dialogCount && dialogManager.sentences.Count == 0) collision = true;
     }
 
     private void FixedUpdate()
@@ -46,19 +52,16 @@ public class PrologueAnimation : Animation
     {
         if (run)
         {
-            if (!collision)
-            {
-                x = 0;
-                y = 0.5f;
-            }
-            if (collision) x = 0.25f;
+            if (collision) player.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, -0.15f) * 2.5f;
 
-            float angle = Mathf.Atan2(x * -1, y) * Mathf.Rad2Deg;
-            player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            scene.transform.Rotate(0, 10f * Time.deltaTime, 0);
+
+            //float angle = Mathf.Atan2(x * -1, y) * Mathf.Rad2Deg;
+            //player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             // ---- Movimiento de Cuerpo Rigido ---- //
-            Vector2 velocityVector = new Vector2(x, y) * 2.05f;
-            player.GetComponent<Rigidbody2D>().velocity = velocityVector;
+            //Vector2 velocityVector = new Vector2(x, y) * 2.05f;
+            //player.GetComponent<Rigidbody2D>().velocity = velocityVector;
             return;
         }
     }
@@ -74,6 +77,12 @@ public class PrologueAnimation : Animation
     public void DisplaySmoke()
     {
         GameObject smokeObject = Instantiate(smoke, player.transform.position, Quaternion.identity);
+        StartCoroutine(WaitEnd());
+    }
+
+    IEnumerator WaitEnd(){
+        yield return new WaitForSeconds(3);
+        onInteraction.Invoke();
     }
 
     IEnumerator WaitBeforeBegin()

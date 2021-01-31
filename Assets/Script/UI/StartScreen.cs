@@ -14,15 +14,16 @@ public class StartScreen : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+
     public void NextStage()
     {
-        animator.SetBool("Start", true);
+        animator.SetBool("start", true);
         StartCoroutine(Wait());
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         onInteraction.Invoke();
     }
 
