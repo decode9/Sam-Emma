@@ -195,7 +195,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -1745,7 +1745,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -1949,7 +1949,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -4896,7 +4896,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -5032,7 +5032,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -6887,7 +6887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c007dd79e79664d8e9e8b3cb25e187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 0}
 --- !u!114 &1823102034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6996,7 +6995,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802560221
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6015316887967556699, guid: a7e1d3543c06293409de5baf384481f2,
     type: 3}
@@ -7489,6 +7488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031980701153100355, guid: 741a940dd88851e40b64bade9aea892f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5031980701153100359, guid: 741a940dd88851e40b64bade9aea892f,
         type: 3}
