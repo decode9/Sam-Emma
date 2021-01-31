@@ -31,8 +31,12 @@ public class Object : Interactive
     }
 
     public override void Interact(){
+<<<<<<< HEAD
         animator.SetBool("taked", true);
         audio.Play();
+=======
+        
+>>>>>>> c6f14e47b25e675ae45449bcbff67f7a546e7bfc
         if(Inventory.instance.AddObject(item,amount)) Destroy(gameObject);
     }
 }
