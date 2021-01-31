@@ -59,6 +59,20 @@ MonoBehaviour:
   collision: 0
   player: {fileID: 0}
   run: 1
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogues:
   - name: Mom
     sentences:
@@ -113,3 +127,4 @@ MonoBehaviour:
     image: {fileID: -5369366932838910030, guid: acebb20e0b3354d4bb390ae5fb93a849,
       type: 3}
   smoke: {fileID: 2853916391975067504, guid: 28281a7fe10bf284cada3cbaaed119cc, type: 3}
+  scene: {fileID: 0}
