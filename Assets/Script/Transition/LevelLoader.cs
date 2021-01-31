@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
     {
         int scenes = SceneManager.sceneCount;
         int level = SceneManager.GetActiveScene().buildIndex + 1;
-        level = level > 1 ? 0 : level;
+        level = level > scenes ? 0 : level;
 
         StartCoroutine(LoadLevel(level));
     }
