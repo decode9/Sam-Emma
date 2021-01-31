@@ -678,13 +678,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1972894686}
         m_MethodName: LoadNextLevel
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Prologue
           m_BoolArgument: 0
         m_CallState: 2
   animator: {fileID: 0}
@@ -960,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 8792527296338953115, guid: c8c5392deaa19454d87064a31e272ade,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8792527296338953115, guid: c8c5392deaa19454d87064a31e272ade,
         type: 3}
@@ -991,11 +991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792527296338953115, guid: c8c5392deaa19454d87064a31e272ade,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8792527296338953115, guid: c8c5392deaa19454d87064a31e272ade,
         type: 3}
@@ -1036,12 +1031,7 @@ PrefabInstance:
     - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9070145278105567196, guid: 2d14efe4d731615489a1afbae7fac1c2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.2531493
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
         type: 3}
@@ -1058,11 +1048,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9070145278105567196, guid: 2d14efe4d731615489a1afbae7fac1c2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -1072,16 +1057,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1834231827540700964, guid: d32411f162fddaa4b930d460941257ae,
         type: 3}
@@ -1118,5 +1093,15 @@ PrefabInstance:
       propertyPath: musicCollection.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 3290591ed1a6da147898b2b992472566, type: 3}
+    - target: {fileID: 9070145278105567196, guid: 2d14efe4d731615489a1afbae7fac1c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2531493
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070145278105567196, guid: 2d14efe4d731615489a1afbae7fac1c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32411f162fddaa4b930d460941257ae, type: 3}

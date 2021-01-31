@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class StartScreen : MonoBehaviour
 {
-
     public UnityEvent onInteraction;
     public Animator animator;
 
@@ -13,7 +12,6 @@ public class StartScreen : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
 
     public void NextStage()
     {
@@ -26,7 +24,4 @@ public class StartScreen : MonoBehaviour
         yield return new WaitForSeconds(2);
         onInteraction.Invoke();
     }
-
-
-
 }
