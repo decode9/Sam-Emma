@@ -6,17 +6,17 @@ using UnityEngine;
 public class itemTrigger : MonoBehaviour
 {   
     Animator animator; 
-    AudioSource audio;
+    AudioSource source;
 
     void Start() {
         animator = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("player")) {
             animator.SetBool("taked", true);
-            audio.Play();
+            source.Play();
             Destroy(gameObject, 1f);
         }
     }

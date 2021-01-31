@@ -27,8 +27,8 @@ public class ShadowEnemyController : MonoBehaviour
             if(emaController.speedRate > 0)
             {
                 emaController.speedRate -= subtractSpeed;
-                if(emaController.speedRate < 0)
-                    GameOverController.instance.Lose();
+               // if(emaController.speedRate < 0)
+                    //GameOverController.instance.Lose();
             }
         }
     }
