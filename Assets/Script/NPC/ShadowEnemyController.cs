@@ -10,6 +10,7 @@ public class ShadowEnemyController : MonoBehaviour
 
     private EmaController emaController;
     private Transform moveSpot;
+    private GameObject gameOver;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class ShadowEnemyController : MonoBehaviour
             if(emaController.speedRate > 0)
             {
                 emaController.speedRate -= subtractSpeed;
+                if(emaController.speedRate < 0)
+                    GameOverController.instance.Lose();
             }
         }
     }
