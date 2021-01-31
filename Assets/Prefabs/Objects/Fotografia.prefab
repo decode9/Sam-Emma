@@ -124,5 +124,6 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls: []
+  items: []
   item: {fileID: 11400000, guid: b3cd71e0309f439428cd4cb5c8848816, type: 2}
   amount: 1
